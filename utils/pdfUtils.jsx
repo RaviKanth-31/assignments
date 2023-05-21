@@ -4,7 +4,7 @@ import fontkit from '@pdf-lib/fontkit';
 const generatePDF = async (text, fontsize , lineheight , margin) => {
   const pdfDoc = await PDFDocument.create();
   pdfDoc.registerFontkit(fontkit);
-  const fontUrls = ['/fonts/myFont.ttf'];
+  const fontUrls = ['/fonts/Myfont.ttf'];
   const fonts = await Promise.all(fontUrls.map(url => fetch(url).then(response => response.arrayBuffer())));
   const embeddedFonts = await Promise.all(fonts.map(font => pdfDoc.embedFont(font)));
 
